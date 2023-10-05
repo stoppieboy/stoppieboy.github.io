@@ -16,9 +16,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={urbanist.className} >
-        <main className="">
+        <main className="flex flex-col items-center">
           <Navbar/>
-          <main className="bg-slate-600 min-h-screen">
+          <main className="bg-stone-950 min-h-screen w-full pt-24">
             {children}
           </main>
         </main>

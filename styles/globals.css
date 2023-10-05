@@ -26,6 +26,10 @@ body {
     rgb(var(--background-start-rgb));
 }
 
+/* body::-webkit-scrollbar{
+  display: none;
+} */
+
 /* html,body{
   height: 100%;
 } */

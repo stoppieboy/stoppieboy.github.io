@@ -1,14 +1,17 @@
 import Link from "next/link"
+import Image from "next/image"
 
 export default function Home() {
   const some = 'red-500'
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <h3 className={`text-${some}`}>Hello This is Shivam.</h3>
-      <button className="bg-purple-400 px-5 py-3 rounded-md active:bg-purple-500">Button</button>
-      <a href="mailto:shivamv1332@gmail.com">shivamv1332@gmail.com</a>
-      <Link href='/about'>About</Link>
+    <main className="flex flex-col items-center space-y-14 min-h-screen pt-20">
+      <span className="text-white">
+        <h1 className='text-5xl font-semibold'>Hello World! My name is<br/></h1><h1 className='text-9xl'>Shivam Verma</h1>
+      </span>
+      <p>
+        
+      </p>
     </main>
   )
 }
