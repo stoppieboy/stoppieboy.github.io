@@ -2,6 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+
+  .page-container{
+    @apply flex flex-col;
+  }
+
+  .cs-navbar{
+    @apply hidden md:flex justify-center h-14
+      w-[600px] items-center text-stone-200 z-10
+      rounded-3xl shadow-2xl shadow-gray-300/10
+    bg-black border-2 border-white;
+  }
+
+  .cs-navItem{
+    @apply hover:bg-primary2 hover:text-primary1 py-[12px] px-6 rounded-[20px] transition ease-in-out duration-[0.2s];
+  }
+}
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -26,9 +44,9 @@ body {
     rgb(var(--background-start-rgb));
 }
 
-/* body::-webkit-scrollbar{
+body::-webkit-scrollbar{
   display: none;
-} */
+}
 
 /* html,body{
   height: 100%;
@@ -36,4 +54,9 @@ body {
 
 /* .navbar>*:hover{
   color: red;
+  background-color: bisque;
+} */
+
+/* #main{
+  background: #333 url("https://source.unsplash.com/D49mhVfkojc") center/cover no-repeat fixed;
 } */
