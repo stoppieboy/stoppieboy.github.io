@@ -9,9 +9,9 @@
   }
 
   .cs-navbar{
-    @apply hidden md:flex justify-center h-14
-      w-[600px] items-center text-stone-200 z-10
-      rounded-3xl shadow-2xl shadow-gray-300/10
+    @apply max-[850px]:hidden flex justify-center items-center
+      h-14 w-[600px] text-stone-200 z-10
+      rounded-3xl shadow-xl shadow-stone-300/10
     bg-black border-2 border-white;
   }
 
@@ -42,6 +42,8 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;
 }
 
 body::-webkit-scrollbar{

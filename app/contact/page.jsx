@@ -2,7 +2,7 @@ import React from 'react'
 
 const Contact = () => {
   return (
-    <main className='flex flex-col'>
+    <main className='page-container'>
       
     </main>
   )
