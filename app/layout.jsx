@@ -20,7 +20,7 @@ export default function RootLayout({ children }) {
       <body className={urbanist.className} >
         <main className="flex flex-col items-center text-primary2 bg-primary1">
           <Navbar/>
-          <main id="main" className="min-h-screen w-full px-4 pt-[11vh] sm:pt-[22vh]">
+          <main id="main" className="min-h-screen w-full px-4 ">
             {children}
           </main>
         </main>

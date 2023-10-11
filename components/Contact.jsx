@@ -2,9 +2,9 @@ import React from 'react'
 
 const Contact = () => {
   return (
-    <main className='page-container'>
-      
-    </main>
+    <div className='h-[65vh] text-7xl font-bold'>
+        Contact
+    </div>
   )
 }
 
