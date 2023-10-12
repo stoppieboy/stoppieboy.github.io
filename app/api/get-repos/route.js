@@ -19,7 +19,7 @@ export const GET = async(req, {params}) => {
         
         const client = new ApolloClient({
             link: authLink.concat(httpLink),
-            cache: new InMemoryCache()
+            cache: new InMemoryCache(),
         });
     
         const result = await client.query({
@@ -48,7 +48,8 @@ export const GET = async(req, {params}) => {
                         }
                     }
                 }
-            }`
+            }`,
+            fetchPolicy: 'no-cache'
         })
 
         return new Response(JSON.stringify(result), {status: 200});

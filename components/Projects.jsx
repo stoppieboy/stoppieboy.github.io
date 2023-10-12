@@ -1,9 +1,6 @@
 "use client"
 
 import { useEffect, useState } from "react";
-import Image from "next/image";
-import { ApolloClient, InMemoryCache, createHttpLink, gql } from "@apollo/client";
-import { setContext } from "@apollo/client/link/context";
 
 const Projects = () => {
 
@@ -28,6 +25,7 @@ const Projects = () => {
             // console.log(process.env.NEXT_PUBLIC_GITHUB_ACCESS_TOKEN)
             const result = await fetch("/api/get-repos", {
                 method: 'GET',
+                cache: 'no-store'
             })
             return result.json()
         }
