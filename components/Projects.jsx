@@ -25,7 +25,9 @@ const Projects = () => {
             // console.log(process.env.NEXT_PUBLIC_GITHUB_ACCESS_TOKEN)
             const result = await fetch("/api/get-repos", {
                 method: 'GET',
-                cache: 'no-store'
+                next: {
+                    revalidate: 0
+                }
             })
             return result.json()
         }

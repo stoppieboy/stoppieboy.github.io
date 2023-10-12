@@ -1,7 +1,7 @@
 import { ApolloClient, InMemoryCache, createHttpLink, gql } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
 
-export const revalidate = 0
+export const fetchCache = 'force-no-store';
 
 export const GET = async(req, {params}) => {
     try{
