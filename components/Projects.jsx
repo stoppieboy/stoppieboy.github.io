@@ -38,7 +38,8 @@ const Projects = () => {
     },[]);
         
     return (
-        <div className=' font-bold flex flex-wrap justify-center'>
+        <div className='h-[100vh] font-bold flex justify-center items-center'>
+            <div className="flex flex-wrap justify-center">
             {repos && repos.map((repo) => (
                 // <div className="w-80 bg-">{repo.name}</div>
                 <a href={repo.node.url} target="_blank" key={repo.node.id} style={{flexBasis:"33.333%"}} className="block max-w-sm p-6 m-2 h-48 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-black dark:border-gray-700 dark:hover:bg-gray-700">
@@ -48,6 +49,7 @@ const Projects = () => {
                 </a>
             ))}
             {/* <object className="bg-black" type="image/svg+xml" data="https://gh-card.dev/repos/stoppieboy/promptopia.svg?fullname=&link_target=_blank"></object> */}
+            </div>
         </div>
     )
 }

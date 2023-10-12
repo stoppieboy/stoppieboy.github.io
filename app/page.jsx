@@ -26,7 +26,7 @@ export default function Home() {
       </div>
 
       {/* About */}
-      <div id="about" className='h-[95vh] flex items-center flex-col max-sm:space-y-10 sm:h-[75vh] sm:flex-row sm:space-x-5 md:space-x-10 lg:space-x-24 xl:space-x-36 [ md:px-12 lg:px-24 xl:px-36 ] max-[450px]:text-xl text-2xl sm:text-3xl lg:text-4xl'>
+      <div id="about" className='h-[95vh] -mt-10 flex items-center flex-col max-sm:space-y-10 sm:h-[95vh] sm:flex-row sm:space-x-5 md:space-x-10 lg:space-x-24 xl:space-x-36 [ md:px-12 lg:px-24 xl:px-36 ] max-[450px]:text-xl text-2xl sm:text-3xl lg:text-4xl'>
 
         <Image src={profilepic} width={250} alt="Shivam's Picture" className='rounded-3xl'/>
 
@@ -37,9 +37,9 @@ export default function Home() {
       </div>
 
       {/* Experience */}
-      <div id="experience">
+      {/* <div id="experience">
         <Experience/>
-      </div>
+      </div> */}
 
       {/* Projects */}
       <div id="projects">

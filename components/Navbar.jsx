@@ -1,7 +1,7 @@
 "use client"
 import Link from 'next/link'
 import Image from 'next/image'
-import resume from "../public/assets/icons/resume_icon.png"
+import resume from "../public/assets/icons/resume_2.png"
 import { useEffect } from 'react'
 // import { useRef } from 'react'
 
@@ -13,10 +13,8 @@ const Navbar = () => {
   useEffect(() => {
     const overlay = document.getElementById("overlay")
     const nav_list = [...document.getElementsByClassName("navbar-list-items")]
-    // console.log(nav_list)
 
     nav_list.forEach(listItem => {
-      // console.log('here')
       listItem.addEventListener('hover', () => {
         overlay.classList.add('active')
         console.log('here')
@@ -37,12 +35,12 @@ const Navbar = () => {
         <ul className="flex justify-between items-center navbar w-full">
             <li className='navbar-list-items ml-[2.8px]' onMouseOver={handleMouseOver}><Link className="cs-navItem" href="/">Home</Link></li>
             <li className='navbar-list-items ' onMouseOver={handleMouseOver}><Link className="cs-navItem" href="#about">About</Link></li>
-            <li className='navbar-list-items ' onMouseOver={handleMouseOver}><Link className="cs-navItem" href="#experience">Experience</Link></li>
+            <li className='navbar-list-items tooltip' onMouseOver={handleMouseOver}><Link className="cs-navItem" href="#">Experience</Link><span className='tooltiptext'>Coming soon</span></li>
             <li className='navbar-list-items ' onMouseOver={handleMouseOver}><Link className="cs-navItem" href="#projects">Projects</Link></li>
             <li className='navbar-list-items mr-[2.8px]' onMouseOver={handleMouseOver}><Link className="cs-navItem" href="#contact">Contact</Link></li>
         </ul>
       </nav>
-      <Link className="flex flex-col items-center" href="https://drive.google.com/file/d/1GXF4IIIzq95SBXYRvfy_F8jqTvpFKbar/view?usp=sharing" target="_blank"><Image src={resume} width={50}/></Link>
+      <Link className="flex flex-col items-center" href="https://drive.google.com/file/d/1GXF4IIIzq95SBXYRvfy_F8jqTvpFKbar/view?usp=sharing" target="_blank"><Image src={resume} width={35}/>Resume</Link>
     </div> 
   )
 }
