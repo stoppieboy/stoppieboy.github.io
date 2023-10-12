@@ -13,8 +13,7 @@ const Navbar = () => {
   useEffect(() => {
     const overlay = document.getElementById("overlay")
     const nav_list = [...document.getElementsByClassName("navbar-list-items")]
-    // const nav_list = document.querySelectorAll("ul li")
-    console.log(nav_list)
+    // console.log(nav_list)
 
     nav_list.forEach(listItem => {
       // console.log('here')
