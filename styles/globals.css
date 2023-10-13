@@ -19,17 +19,21 @@
     @apply hover:bg-primary2 hover:text-primary1 py-[12px] px-6 rounded-[20px] transition ease-in-out duration-[0.2s];
   }
 
+  .cs-navItem-disabled {
+    @apply py-[12px] px-6 rounded-[20px];
+  }
+
   .tooltip {
     position: relative;
     display: inline-block;
-    border-bottom: 1px dotted black;
+    /* border-bottom: 1px dotted rgb(231, 229, 228); */
   }
   
   .tooltip .tooltiptext {
     visibility: hidden;
     width: 120px;
-    background-color: black;
-    color: #fff;
+    background-color: rgb(231, 229, 228);
+    color: rgb(12,10,9);
     text-align: center;
     border-radius: 6px;
     padding: 5px 0;
@@ -48,7 +52,7 @@
     margin-left: -5px;
     border-width: 5px;
     border-style: solid;
-    border-color: transparent transparent black transparent;
+    border-color: transparent transparent rgb(231, 229, 228) transparent;
   }
   
   .tooltip:hover .tooltiptext {

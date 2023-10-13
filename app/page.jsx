@@ -4,8 +4,13 @@ import profilepic from "../public/assets/images/user_img_bw.jpg"
 import Contact from "@/components/Contact"
 import Projects from "@/components/Projects"
 import Experience from "@/components/Experience"
+import { promises as fs } from "fs"
 
-export default function Home() {
+export default async function Home() {
+
+  const file = await fs.readFile(process.cwd()+'/data.json', 'utf8');
+  const data = JSON.parse(file)
+
   // pt-[11vh] sm:pt-[22vh]
   return (
     <main className="page-container items-center">
@@ -31,7 +36,7 @@ export default function Home() {
         <Image src={profilepic} width={250} alt="Shivam's Picture" className='rounded-3xl'/>
 
         <div className='flex-grow'> 
-          <p className=' px-5 sm:font-medium text-center sm:text-start'>I am an enthusiastic person with high ownership and strong work ethics who loves to learn and develop new technologies. Looking forward to gain experience and meet new people in real life projects.</p>
+          <p className=' px-5 sm:font-medium text-center sm:text-start'>{data.about_text}</p>
         </div>
 
       </div>
@@ -48,7 +53,7 @@ export default function Home() {
 
       {/* Contact */}
       <div id="contact">
-        <Contact/>
+        <Contact mail={data.email}/>
       </div>
 
     </main>
