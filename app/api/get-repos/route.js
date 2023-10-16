@@ -1,7 +1,7 @@
 import { ApolloClient, InMemoryCache, createHttpLink, gql } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
 
-export const fetchCache = 'force-no-store';
+// export const fetchCache = 'force-no-store';
 
 export const GET = async(req, {params}) => {
     try{
@@ -57,5 +57,6 @@ export const GET = async(req, {params}) => {
         return new Response(JSON.stringify(result), {status: 200});
     }catch(err){
         console.log("server error: ",err)
+        return new Response(JSON.stringify(err), {status: 404})
     }
 }
