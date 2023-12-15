@@ -28,6 +28,7 @@ export const GET = async(req, {params}) => {
                     }
                 }
             }`,
+            fetchPolicy: "no-cache",
             context: {
                 fetchOptions: {
                     next: { revalidate: 5 },
