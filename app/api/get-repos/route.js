@@ -37,7 +37,14 @@ export const GET = async(req, {params}) => {
             },
         })
 
-        return new Response(JSON.stringify(result), {status: 200});
+        return new Response(JSON.stringify(result), {
+            status: 200,
+            headers: {
+                'Cache-Control': 'public, s-maxage=1',
+                'CDN-Cache-Control': 'public, s-maxage=60',
+                'Vercel-CDN-Cache-Control': 'public, s-maxage=3600',
+            },
+        });
     }catch(err){
         console.log("server error: ",err)
         return new Response(JSON.stringify(err), {status: 404})
