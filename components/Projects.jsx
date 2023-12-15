@@ -27,7 +27,8 @@ const Projects = () => {
                 method: 'GET',
                 next: {
                     revalidate: 0
-                }
+                },
+                cache: "no-store"
             })
             return result.json()
         }

@@ -4,7 +4,6 @@ import { getClient } from "@/lib/client";
 export const GET = async(req, {params}) => {
     try{
         const client = getClient()
-        console.log('here');
         const result = await client.query({
             query:gql`
             {
