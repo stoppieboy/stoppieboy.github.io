@@ -40,7 +40,7 @@ export const GET = async(req, {params}) => {
         return new Response(JSON.stringify(result), {
             status: 200,
             headers: {
-                'Cache-Control': 'public, s-maxage=1',
+                'Cache-Control': 'public, no-cache',
                 'CDN-Cache-Control': 'public, s-maxage=1',
                 'Vercel-CDN-Cache-Control': 'public, s-maxage=1',
             },
