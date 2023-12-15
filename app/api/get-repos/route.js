@@ -1,6 +1,8 @@
 import { gql } from "@apollo/client";
 import { getClient } from "@/lib/client";
 
+export const fetchCache = "force-no-store"
+
 export const GET = async(req, {params}) => {
     try{
         const client = getClient()
