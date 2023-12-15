@@ -26,7 +26,7 @@ const Projects = () => {
             const result = await fetch("/api/get-repos", {
                 method: 'GET',
                 next: {
-                    revalidate: 0
+                    revalidate: 5
                 }
             })
             return result.json()
