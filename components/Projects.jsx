@@ -15,7 +15,6 @@ const Projects = () => {
             return result.json()
         }
         getRepos().then((r) => {
-            console.log(r);
             setRepos(r.data.user.pinnedItems.edges)
         })
     },[]);
