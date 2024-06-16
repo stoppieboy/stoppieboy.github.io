@@ -11,7 +11,7 @@ export default async function Home() {
 
   const file = await fs.readFile(process.cwd()+'/data.json', 'utf8');
   // const data = JSON.parse(file)
-  const data = {about_text: kv.get('about_text'), email: kv.get('email')}
+  const data = {about_text: await kv.get('about_text'), email: await kv.get('email')}
 
   // pt-[11vh] sm:pt-[22vh]
   return (
