@@ -5,11 +5,13 @@ import Contact from "@/components/Contact"
 import Projects from "@/components/Projects"
 import Experience from "@/components/Experience"
 import { promises as fs } from "fs"
+import { kv } from "@vercel/kv"
 
 export default async function Home() {
 
   const file = await fs.readFile(process.cwd()+'/data.json', 'utf8');
-  const data = JSON.parse(file)
+  // const data = JSON.parse(file)
+  const data = {about_text: kv.get('about_text'), email: kv.get('email')}
 
   // pt-[11vh] sm:pt-[22vh]
   return (
