@@ -7,28 +7,10 @@ const Projects = () => {
     const [repos, setRepos] = useState([]);
 
     useEffect(() => {
-    //     console.log('hi')
-    //     const octokit = new Octokit({auth: process.env.GITHUB_ACCESS_TOKEN})
-    //     const getRepos = async() => {
-    //         return await octokit.request("GET /users/{username}/repos", {
-    //           username: "stoppieboy"
-    //         })
-    //     }
-    //     getRepos().then((r) => {
-    //         console.log(r)
-    //         setRepos(r.data.slice(0,6))
-    //     });
-    //     console.log('bye')
-
-
         const getRepos = async() => {
             // console.log(process.env.NEXT_PUBLIC_GITHUB_ACCESS_TOKEN)
             const result = await fetch("/api/get-repos", {
                 method: 'GET',
-                next: {
-                    revalidate: 0
-                },
-                cache: "no-store"
             })
             return result.json()
         }
