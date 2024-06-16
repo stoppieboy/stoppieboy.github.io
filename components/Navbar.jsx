@@ -3,6 +3,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import resume from "../public/assets/icons/resume_2.png"
 import { useEffect } from 'react'
+import SmoothLink from './SmoothLink'
 // import { useRef } from 'react'
 
 const Navbar = () => {
@@ -33,11 +34,11 @@ const Navbar = () => {
       <nav className='cs-navbar font-extrabold'>
         <div className="overlay" id="overlay"></div>
         <ul className="flex justify-between items-center navbar w-full">
-            <li className='navbar-list-items ml-[2.8px]' onMouseOver={handleMouseOver}><Link className="cs-navItem" href="/">Home</Link></li>
-            <li className='navbar-list-items ' onMouseOver={handleMouseOver}><Link className="cs-navItem" href="#about">About</Link></li>
-            <li className='navbar-list-items tooltip' onMouseOver={handleMouseOver}><Link className="cs-navItem-disabled" href="#">Experience</Link><span className='tooltiptext'>Coming soon</span></li>
-            <li className='navbar-list-items ' onMouseOver={handleMouseOver}><Link className="cs-navItem" href="#projects">Projects</Link></li>
-            <li className='navbar-list-items mr-[2.8px]' onMouseOver={handleMouseOver}><Link className="cs-navItem" href="#contact">Contact</Link></li>
+            <li className='navbar-list-items ml-[2.8px]' onMouseOver={handleMouseOver}><SmoothLink className="cs-navItem" href="/">Home</SmoothLink></li>
+            <li className='navbar-list-items ' onMouseOver={handleMouseOver}><SmoothLink className="cs-navItem" href="#about">About</SmoothLink></li>
+            <li className='navbar-list-items tooltip' onMouseOver={handleMouseOver}><SmoothLink className="cs-navItem-disabled" href="#">Experience</SmoothLink><span className='tooltiptext'>Coming soon</span></li>
+            <li className='navbar-list-items ' onMouseOver={handleMouseOver}><SmoothLink className="cs-navItem" href="#projects">Projects</SmoothLink></li>
+            <li className='navbar-list-items mr-[2.8px]' onMouseOver={handleMouseOver}><SmoothLink className="cs-navItem" href="#contact">Contact</SmoothLink></li>
         </ul>
       </nav>
       <Link className="flex flex-col items-center" href="https://drive.google.com/file/d/1GXF4IIIzq95SBXYRvfy_F8jqTvpFKbar/view?usp=sharing" target="_blank"><Image src={resume} width={35}/>Resume</Link>
