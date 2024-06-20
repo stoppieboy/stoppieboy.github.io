@@ -90,19 +90,6 @@ body {
     scrollbar-width: none;
 }
 
-body::-webkit-scrollbar{
-  display: none;
+html::-webkit-scrollbar{
+  display:none;
 }
-
-/* html,body{
-  height: 100%;
-} */
-
-/* .navbar>*:hover{
-  color: red;
-  background-color: bisque;
-} */
-
-/* #main{
-  background: #333 url("https://source.unsplash.com/D49mhVfkojc") center/cover no-repeat fixed;
-} */

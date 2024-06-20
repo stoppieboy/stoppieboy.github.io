@@ -20,9 +20,9 @@ const Projects = () => {
     },[]);
         
     return (
-        <div className='h-[100vh] font-bold flex justify-center items-center'>
+        <div className='min-h-[100vh] font-bold flex justify-center items-center'>
             {/* <div className="flex flex-wrap justify-center"> */}
-            <div className="grid grid-rows-3 grid-cols-2 lg:grid-cols-3 lg:grid-rows-2">
+            <div className="grid px-6 grid-rows-6 min-[540px]:px-0 min-[540px]:grid-rows-3 min-[540px]:grid-cols-2 lg:grid-cols-3 lg:grid-rows-2 max-w-screen-xl">
             {repos && repos.map((repo) => (
                 // <div className="w-80 bg-">{repo.name}</div>
                 <a href={repo.node.url} target="_blank" key={repo.node.id} className="flex flex-col p-6 m-2 border rounded-lg shadow bg-black border-gray-700 hover:bg-gray-700">
