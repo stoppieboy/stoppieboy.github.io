@@ -29,12 +29,12 @@ const Navbar = () => {
   }
 
   return (
-    <div className='flex w-full h-28 px-4 md:px-[34px] py-6 justify-between font-semibold text-lg items-center'>
+    <div className='fixed z-10 flex w-full h-28 px-4 md:px-[34px] py-6 justify-between font-semibold text-lg items-center'>
       <div className='text-2xl font-extrabold cursor-pointer'>Shivam</div>
       <nav className='cs-navbar font-extrabold'>
         <div className="overlay" id="overlay"></div>
         <ul className="flex justify-between items-center navbar w-full">
-            <li className='navbar-list-items ml-[2.8px]' onMouseOver={handleMouseOver}><SmoothLink className="cs-navItem" href="/">Home</SmoothLink></li>
+            <li className='navbar-list-items ml-[2.8px]' onMouseOver={handleMouseOver}><SmoothLink className="cs-navItem" href="#home">Home</SmoothLink></li>
             <li className='navbar-list-items ' onMouseOver={handleMouseOver}><SmoothLink className="cs-navItem" href="#about">About</SmoothLink></li>
             <li className='navbar-list-items tooltip' onMouseOver={handleMouseOver}><SmoothLink className="cs-navItem-disabled" href="#">Experience</SmoothLink><span className='tooltiptext'>Coming soon</span></li>
             <li className='navbar-list-items ' onMouseOver={handleMouseOver}><SmoothLink className="cs-navItem" href="#projects">Projects</SmoothLink></li>
