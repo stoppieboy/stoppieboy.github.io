@@ -58,6 +58,10 @@
   .tooltip:hover .tooltiptext {
     visibility: visible;
   }
+
+  .truncate-box{
+    @apply line-clamp-4;
+  }
 }
 
 :root {
