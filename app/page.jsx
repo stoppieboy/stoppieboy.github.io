@@ -18,7 +18,7 @@ export default async function Home() {
     <main className="page-container items-center">
 
       {/* Home */}
-      <div className="h-[86vh] flex items-center justify-center">
+      <div id="home" className="h-[86vh] flex items-center justify-center">
 
         {/* for smaller screens */}
         <span className="flex sm:hidden justify-center absolute top-[30%]">
