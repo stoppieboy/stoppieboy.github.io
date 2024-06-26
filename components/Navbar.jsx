@@ -41,7 +41,7 @@ const Navbar = () => {
             <li className='navbar-list-items mr-[2.8px]' onMouseOver={handleMouseOver}><SmoothLink className="cs-navItem" href="#contact">Contact</SmoothLink></li>
         </ul>
       </nav>
-      <Link className="flex flex-col items-center" href="https://drive.google.com/file/d/1GXF4IIIzq95SBXYRvfy_F8jqTvpFKbar/view?usp=sharing" target="_blank"><Image src={resume} width={35}/>Resume</Link>
+      <Link className="flex flex-col items-center" href="https://drive.google.com/file/d/1GXF4IIIzq95SBXYRvfy_F8jqTvpFKbar/view?usp=sharing" target="_blank"><Image src={resume} alt='resume link' width={35}/>Resume</Link>
     </div> 
   )
 }

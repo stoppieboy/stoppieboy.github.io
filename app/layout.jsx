@@ -6,7 +6,7 @@ import { Urbanist } from 'next/font/google'
 import { Inter } from 'next/font/google'
 
 // const inter = Inter({ subsets: ['latin'] })
-const urbanist = Urbanist({ subsets: ['latin'] })
+const urbanist = Urbanist({ subsets: ['latin'], preload: true })
 const inter = Inter({subsets: ['latin']})
 
 export const metadata = {
