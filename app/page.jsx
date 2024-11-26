@@ -10,7 +10,14 @@ export default async function Home() {
   // const data = JSON.parse(await fs.readFile(process.cwd()+'/data.json', 'utf8'));
 
   //for production
-  const data = {about_text: await kv.get('about_text'), email: await kv.get('email')}
+  var data = {}
+  try{
+    const about_text = await kv.get('about_text');
+    const email = await kv.get('email');
+    data = {about_text: about_text, email: email}
+  }catch(e){
+    console.log(e)
+  }
 
   return (
     <main className="page-container items-center">
