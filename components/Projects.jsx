@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-const Projects = () => {
+const Projects = ({ id }) => {
 
     const [repos, setRepos] = useState([]);
 
@@ -15,12 +15,12 @@ const Projects = () => {
             return result.json()
         }
         getRepos().then((r) => {
-            setRepos(r.data.user.pinnedItems.edges)
+            setRepos(r.data?.user?.pinnedItems?.edges)
         })
     },[]);
         
     return (
-        <div className='min-h-[100vh] font-bold flex justify-center items-center'>
+        <div id={id || "projects"} className='min-h-[100vh] font-bold flex justify-center items-center'>
             {/* <div className="flex flex-wrap justify-center"> */}
             <div className="grid px-6 grid-rows-6 min-[540px]:px-0 min-[540px]:grid-rows-3 min-[540px]:grid-cols-2 lg:grid-cols-3 lg:grid-rows-2 max-w-screen-xl">
             {repos && repos.map((repo) => (
