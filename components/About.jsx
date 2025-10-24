@@ -13,7 +13,8 @@ const About = ({ id, data }) => {
                 <p className=' px-5 sm:font-medium text-center sm:text-start'>{data.about_text}</p>
             </div> */}
             <div className='flex-grow'> 
-                <p className=' px-5 sm:font-medium text-center sm:text-start leading-[1.7] '>A <Skill>Software engineering fresher</Skill>, experienced in both front-end and back-end technologies, eager to contribute to dynamic and innovative web projects. Proficient in HTML, CSS, JavaScript, and frameworks like <Skill>React</Skill> and <Skill>Node.js</Skill>, as well as databases such as <Skill>MySQL</Skill> and <Skill>MongoDB</Skill>, I am passionate about building responsive, user-friendly applications and continuously improving my technical skills.</p>
+                {/* <p className=' px-5 sm:font-medium text-center sm:text-start leading-[1.7] '>A <Skill>Software engineering fresher</Skill>, experienced in both front-end and back-end technologies, eager to contribute to dynamic and innovative web projects. Proficient in HTML, CSS, JavaScript, and frameworks like <Skill>React</Skill> and <Skill>Node.js</Skill>, as well as databases such as <Skill>MySQL</Skill> and <Skill>MongoDB</Skill>, I am passionate about building responsive, user-friendly applications and continuously improving my technical skills.</p> */}
+                <p className=' px-5 sm:font-medium text-center sm:text-start leading-[1.7] '><Skill>Software Engineer</Skill> with 1+ year of experience in full-stack development and API design. Passionate about solving complex problems and building technology that delivers measurable value. Expertise in Java, JavaScript, Golang and frameworks like <Skill>React.js</Skill> and <Skill>Next.js</Skill>.</p>
             </div>
 
         </div>
