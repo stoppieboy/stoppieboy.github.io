@@ -39,7 +39,7 @@ const Navbar = () => {
         <ul className="flex justify-between items-center navbar w-full">
             <li className='navbar-list-items ml-[2.8px]' onMouseOver={handleMouseOver}><SmoothLink className="cs-navItem" href="#home">Home</SmoothLink></li>
             <li className='navbar-list-items ' onMouseOver={handleMouseOver}><SmoothLink className="cs-navItem" href="#about">About</SmoothLink></li>
-            <li className='navbar-list-items tooltip' onMouseOver={handleMouseOver}><SmoothLink className="cs-navItem-disabled" href="#">Experience</SmoothLink><span className='tooltiptext'>Coming soon</span></li>
+            <li className='navbar-list-items tooltip' onMouseOver={handleMouseOver}><SmoothLink className="cs-navItem" href="#experience">Experience</SmoothLink></li>
             <li className='navbar-list-items ' onMouseOver={handleMouseOver}><SmoothLink className="cs-navItem" href="#projects">Projects</SmoothLink></li>
             <li className='navbar-list-items mr-[2.8px]' onMouseOver={handleMouseOver}><SmoothLink className="cs-navItem" href="#contact">Contact</SmoothLink></li>
         </ul>
