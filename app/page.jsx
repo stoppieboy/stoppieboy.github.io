@@ -3,6 +3,7 @@ import About from "@/components/About"
 import Projects from "@/components/Projects"
 import Contact from "@/components/Contact"
 import { kv } from "@vercel/kv"
+import Experience from "@/components/Experience"
 
 export default async function Home() {
 
@@ -29,9 +30,7 @@ export default async function Home() {
       <About id="about" data={data}/>
 
       {/* Experience */}
-      {/* <div id="experience">
-        <Experience/>
-      </div> */}
+      <Experience id="experience"/>
 
       {/* Projects */}
       <Projects id="projects"/>
