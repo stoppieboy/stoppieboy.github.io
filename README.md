@@ -46,7 +46,6 @@ components/
   Navbar.jsx          # Fixed navbar with mobile hamburger menu
   SocialLinks.jsx     # Vertical social icon strip
   Skill.jsx           # Inline skill highlight chip
-  SmoothLink.jsx      # Anchor wrapper with smooth-scroll behaviour
 data.json             # Content data — experience entries, about text, email
 public/assets/        # Static icons and images
 styles/globals.css    # Global styles and Tailwind component layer

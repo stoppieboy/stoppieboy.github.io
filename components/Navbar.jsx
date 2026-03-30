@@ -1,9 +1,7 @@
 "use client"
-import Link from 'next/link'
 import Image from 'next/image'
 import resume from "../public/assets/icons/resume_2.png"
 import { useState } from 'react'
-import SmoothLink from './SmoothLink'
 import { Jost } from 'next/font/google'
 
 const font = Jost({subsets: ['latin'], weight: ['200', '300', '400', '500', '600', '700', '800']})
@@ -22,13 +20,13 @@ const Navbar = () => {
         <ul className="flex justify-between items-center navbar w-full">
             {NAV_ITEMS.map((item) => (
                 <li key={item} className='navbar-list-items'>
-                    <SmoothLink className="cs-navItem" href={`#${item}`}>{item.charAt(0).toUpperCase() + item.slice(1)}</SmoothLink>
+                    <a className="cs-navItem" href={`#${item}`}>{item.charAt(0).toUpperCase() + item.slice(1)}</a>
                 </li>
             ))}
         </ul>
       </nav>
       <div className="flex items-center gap-3">
-        <Link className="flex flex-col items-center" href="https://drive.google.com/file/d/1GXF4IIIzq95SBXYRvfy_F8jqTvpFKbar/view?usp=sharing" target="_blank" rel="noopener noreferrer"><Image src={resume} alt='resume link' width={35}/>Resume</Link>
+        <a className="flex flex-col items-center" href="https://drive.google.com/file/d/1GXF4IIIzq95SBXYRvfy_F8jqTvpFKbar/view?usp=sharing" target="_blank" rel="noopener noreferrer"><Image src={resume} alt='resume link' width={35}/>Resume</a>
         <button
           className="min-[850px]:hidden flex flex-col justify-center items-center gap-[5px] w-8 h-8"
           aria-label="Toggle navigation menu"
@@ -46,9 +44,9 @@ const Navbar = () => {
         <ul className="flex flex-col items-center py-4 gap-2">
           {NAV_ITEMS.map((item) => (
             <li key={item} className="w-full text-center" onClick={() => setMobileOpen(false)}>
-              <SmoothLink className="cs-navItem block py-3 text-primary2" href={`#${item}`}>
+              <a className="cs-navItem block py-3 text-primary2" href={`#${item}`}>
                 {item.charAt(0).toUpperCase() + item.slice(1)}
-              </SmoothLink>
+              </a>
             </li>
           ))}
         </ul>

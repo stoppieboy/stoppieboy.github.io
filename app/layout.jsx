@@ -26,7 +26,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={font.className} >
-        <main className="flex flex-col items-center text-secondary2 bg-accent2">
+        <main className="flex flex-col items-center text-secondary2 bg-accent2 select-none">
           <Navbar/>
           {/* <main id="main" className="min-h-screen w-full px-4 bg-[url('/assets/images/portfolio_bg.png')] bg-no-repeat bg-contain"> */}
           <main id="main" className="min-h-screen w-full px-4" aria-label="Main content">
