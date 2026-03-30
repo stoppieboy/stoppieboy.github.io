@@ -46,7 +46,7 @@ const Projects = ({ id }) => {
                 <div className="grid px-6 grid-rows-6 min-[540px]:px-0 min-[540px]:grid-rows-3 min-[540px]:grid-cols-2 lg:grid-cols-3 lg:grid-rows-2 max-w-screen-xl">
                 {repos.map((repo) => (
                     <a href={repo.node.url} target="_blank" rel="noopener noreferrer" key={repo.node.id} className="flex flex-col p-6 m-2 border rounded-lg shadow bg-black border-gray-700 hover:bg-gray-700">
-                        <h5 className="mb-2 text-2xl font-bold text-primary2 truncate"><RepoIcon/>{repo.node.name}</h5>
+                        <h5 className="mb-2 text-2xl font-bold text-primary2 flex items-center gap-2"><RepoIcon/><span className="truncate">{repo.node.name}</span></h5>
                         <p className="font-normal text-gray-400 w-full truncate-box mb-2 text-left">{repo.node.description}</p>
                         <div className="flex items-end flex-grow font-medium text-gray-400">
                             <div>
