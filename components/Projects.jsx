@@ -35,7 +35,7 @@ const Projects = ({ id }) => {
             {loading && (
                 <div className="grid px-6 grid-rows-6 min-[540px]:px-0 min-[540px]:grid-rows-3 min-[540px]:grid-cols-2 lg:grid-cols-3 lg:grid-rows-2 max-w-screen-xl">
                     {Array.from({length: 6}).map((_, i) => (
-                        <div key={i} className="flex flex-col p-6 m-2 border rounded-lg bg-black border-gray-700 animate-pulse h-36"/>
+                        <div key={i} className="flex flex-col p-6 m-2 border rounded-lg bg-gray-800 border-gray-700 animate-pulse h-36 lg:min-w-[300px]"/>
                     ))}
                 </div>
             )}
