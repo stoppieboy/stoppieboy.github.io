@@ -1,7 +1,7 @@
 
 const Skill = ({children}) => {
   return (
-    <span className="text-accent1 font-extrabold text-[36px]">
+    <span className="text-accent3 font-extrabold">
         {children}
     </span>
   )

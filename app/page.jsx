@@ -27,7 +27,7 @@ export default async function Home() {
       <HomePage id="home"/>
 
       {/* About */}
-      <About id="about" data={data}/>
+      <About id="about"/>
 
       {/* Experience */}
       <Experience id="experience"/>

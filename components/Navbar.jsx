@@ -1,51 +1,87 @@
 "use client"
-import Link from 'next/link'
 import Image from 'next/image'
 import resume from "../public/assets/icons/resume_2.png"
-import { useEffect } from 'react'
-import SmoothLink from './SmoothLink'
+import { useState, useEffect } from 'react'
 import { Jost } from 'next/font/google'
-// import { useRef } from 'react'
 
 const font = Jost({subsets: ['latin'], weight: ['200', '300', '400', '500', '600', '700', '800']})
 
+const NAV_ITEMS = ['home', 'about', 'experience', 'projects', 'contact']
+
 const Navbar = () => {
-  // const overlay = useRef(null)
-  // const list_items = useRef(null);
-  // overlay.current.innerHTML = ""
+  const [mobileOpen, setMobileOpen] = useState(false)
+  const [activeSection, setActiveSection] = useState('home')
 
-  // useEffect(() => {
-  //   const overlay = document.getElementById("overlay")
-  //   const nav_list = [...document.getElementsByClassName("navbar-list-items")]
-
-  //   nav_list.forEach(listItem => {
-  //     listItem.addEventListener('hover', () => {
-  //       overlay.classList.add('active')
-  //       console.log('here')
-  //     })
-  //   })
-  // },[])
-
-  const handleMouseOver = (e) => {
-    // console.log(e);
-    // document.getElementById('overlay').classList.add('active')
-  }
+  useEffect(() => {
+    const observers = NAV_ITEMS.map((item) => {
+      const el = document.getElementById(item)
+      if (!el) return null
+      const observer = new IntersectionObserver(
+        ([entry]) => { if (entry.isIntersecting) setActiveSection(item) },
+        { rootMargin: '-40% 0px -55% 0px' }
+      )
+      observer.observe(el)
+      return observer
+    })
+    return () => observers.forEach((o) => o?.disconnect())
+  }, [])
 
   return (
+    <>
     <div className={`fixed z-20 flex w-full h-28 px-4 md:px-[34px] py-6 justify-between font-semibold text-lg items-center ${font.className}`}>
-      <div className='text-2xl font-extrabold cursor-pointer'>Shivam</div>
+      <a href="#home" aria-label="Go to top" className="cursor-pointer flex-shrink-0">
+        <svg width="48" height="36" viewBox="0 0 48 36" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          {/* S bold */}
+          <text x="0" y="26" fontFamily="'Jost', sans-serif" fontSize="26" fontWeight="700" fill="white">S</text>
+          {/* V light */}
+          <text x="23" y="26" fontFamily="'Jost', sans-serif" fontSize="26" fontWeight="200" fill="white">V</text>
+          {/* Thin underline accent under S only */}
+          <line x1="1" y1="31" x2="19" y2="31" stroke="white" strokeWidth="1.5" strokeLinecap="round"/>
+        </svg>
+      </a>
       <nav className='cs-navbar font-bold ice-frost shadow-black/70'>
         <div className="overlay" id="overlay"></div>
         <ul className="flex justify-between items-center navbar w-full">
-            <li className='navbar-list-items ml-[2.8px]' onMouseOver={handleMouseOver}><SmoothLink className="cs-navItem" href="#home">Home</SmoothLink></li>
-            <li className='navbar-list-items ' onMouseOver={handleMouseOver}><SmoothLink className="cs-navItem" href="#about">About</SmoothLink></li>
-            <li className='navbar-list-items tooltip' onMouseOver={handleMouseOver}><SmoothLink className="cs-navItem" href="#experience">Experience</SmoothLink></li>
-            <li className='navbar-list-items ' onMouseOver={handleMouseOver}><SmoothLink className="cs-navItem" href="#projects">Projects</SmoothLink></li>
-            <li className='navbar-list-items mr-[2.8px]' onMouseOver={handleMouseOver}><SmoothLink className="cs-navItem" href="#contact">Contact</SmoothLink></li>
+            {NAV_ITEMS.map((item) => (
+                <li key={item} className='navbar-list-items'>
+                    <a
+                        className={`cs-navItem ${activeSection === item ? 'text-accent3' : ''}`}
+                        href={`#${item}`}
+                    >
+                        {item.charAt(0).toUpperCase() + item.slice(1)}
+                    </a>
+                </li>
+            ))}
         </ul>
       </nav>
-      <Link className="flex flex-col items-center" href="https://drive.google.com/file/d/1GXF4IIIzq95SBXYRvfy_F8jqTvpFKbar/view?usp=sharing" target="_blank"><Image src={resume} alt='resume link' width={35}/>Resume</Link>
-    </div> 
+      <div className="flex items-center gap-3">
+        <a className="flex flex-col items-center" href="https://drive.google.com/file/d/1GXF4IIIzq95SBXYRvfy_F8jqTvpFKbar/view?usp=sharing" target="_blank" rel="noopener noreferrer"><Image src={resume} alt='resume link' width={35}/>Resume</a>
+        <button
+          className="min-[850px]:hidden flex flex-col justify-center items-center gap-[5px] w-8 h-8"
+          aria-label="Toggle navigation menu"
+          aria-expanded={mobileOpen}
+          onClick={() => setMobileOpen(!mobileOpen)}
+        >
+          <span className={`block w-6 h-0.5 bg-primary2 transition-all duration-300 ${mobileOpen ? 'translate-y-[7px] rotate-45' : ''}`} />
+          <span className={`block w-6 h-0.5 bg-primary2 transition-all duration-300 ${mobileOpen ? 'opacity-0' : ''}`} />
+          <span className={`block w-6 h-0.5 bg-primary2 transition-all duration-300 ${mobileOpen ? '-translate-y-[7px] -rotate-45' : ''}`} />
+        </button>
+      </div>
+    </div>
+    {mobileOpen && (
+      <div className={`min-[850px]:hidden fixed z-10 top-28 left-0 w-full ice-frost border-b border-white/10 ${font.className}`}>
+        <ul className="flex flex-col items-center py-4 gap-2">
+          {NAV_ITEMS.map((item) => (
+            <li key={item} className="w-full text-center" onClick={() => setMobileOpen(false)}>
+              <a className={`cs-navItem block py-3 ${activeSection === item ? 'text-accent3' : 'text-primary2'}`} href={`#${item}`}>
+                {item.charAt(0).toUpperCase() + item.slice(1)}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    )}
+    </>
   )
 }
 
