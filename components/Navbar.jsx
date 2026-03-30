@@ -29,7 +29,16 @@ const Navbar = () => {
   return (
     <>
     <div className={`fixed z-20 flex w-full h-28 px-4 md:px-[34px] py-6 justify-between font-semibold text-lg items-center ${font.className}`}>
-      <div className='text-2xl font-extrabold cursor-pointer'>Shivam</div>
+      <a href="#home" aria-label="Go to top" className="cursor-pointer flex-shrink-0">
+        <svg width="48" height="36" viewBox="0 0 48 36" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          {/* S bold */}
+          <text x="0" y="26" fontFamily="'Jost', sans-serif" fontSize="26" fontWeight="700" fill="white">S</text>
+          {/* V light */}
+          <text x="23" y="26" fontFamily="'Jost', sans-serif" fontSize="26" fontWeight="200" fill="white">V</text>
+          {/* Thin underline accent under S only */}
+          <line x1="1" y1="31" x2="19" y2="31" stroke="white" strokeWidth="1.5" strokeLinecap="round"/>
+        </svg>
+      </a>
       <nav className='cs-navbar font-bold ice-frost shadow-black/70'>
         <div className="overlay" id="overlay"></div>
         <ul className="flex justify-between items-center navbar w-full">
