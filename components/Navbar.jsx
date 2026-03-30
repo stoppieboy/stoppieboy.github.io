@@ -1,7 +1,7 @@
 "use client"
 import Image from 'next/image'
 import resume from "../public/assets/icons/resume_2.png"
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Jost } from 'next/font/google'
 
 const font = Jost({subsets: ['latin'], weight: ['200', '300', '400', '500', '600', '700', '800']})
@@ -10,6 +10,21 @@ const NAV_ITEMS = ['home', 'about', 'experience', 'projects', 'contact']
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false)
+  const [activeSection, setActiveSection] = useState('home')
+
+  useEffect(() => {
+    const observers = NAV_ITEMS.map((item) => {
+      const el = document.getElementById(item)
+      if (!el) return null
+      const observer = new IntersectionObserver(
+        ([entry]) => { if (entry.isIntersecting) setActiveSection(item) },
+        { rootMargin: '-40% 0px -55% 0px' }
+      )
+      observer.observe(el)
+      return observer
+    })
+    return () => observers.forEach((o) => o?.disconnect())
+  }, [])
 
   return (
     <>
@@ -20,7 +35,12 @@ const Navbar = () => {
         <ul className="flex justify-between items-center navbar w-full">
             {NAV_ITEMS.map((item) => (
                 <li key={item} className='navbar-list-items'>
-                    <a className="cs-navItem" href={`#${item}`}>{item.charAt(0).toUpperCase() + item.slice(1)}</a>
+                    <a
+                        className={`cs-navItem ${activeSection === item ? 'text-accent3' : ''}`}
+                        href={`#${item}`}
+                    >
+                        {item.charAt(0).toUpperCase() + item.slice(1)}
+                    </a>
                 </li>
             ))}
         </ul>
@@ -44,7 +64,7 @@ const Navbar = () => {
         <ul className="flex flex-col items-center py-4 gap-2">
           {NAV_ITEMS.map((item) => (
             <li key={item} className="w-full text-center" onClick={() => setMobileOpen(false)}>
-              <a className="cs-navItem block py-3 text-primary2" href={`#${item}`}>
+              <a className={`cs-navItem block py-3 ${activeSection === item ? 'text-accent3' : 'text-primary2'}`} href={`#${item}`}>
                 {item.charAt(0).toUpperCase() + item.slice(1)}
               </a>
             </li>

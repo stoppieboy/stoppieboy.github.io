@@ -19,6 +19,8 @@ export const GET = async(req, {params}) => {
                                     name
                                     url
                                     description
+                                    homepageUrl
+                                    stargazerCount
                                     primaryLanguage{
                                         name,
                                         color

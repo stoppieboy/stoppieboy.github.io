@@ -1,11 +1,21 @@
 {
     "about_text": "Software Engineer with 1+ year of experience in full-stack development and API design. Passionate about solving complex problems and building technology that delivers measurable value. Expertise in Java, JavaScript, Golang and frameworks like React.js and Next.js.",
     "email": "shivamv1332@gmail.com",
+    "linkedinUrl": "https://linkedin.com/in/shivam3004",
+    "openToWork": true,
+    "skills": [
+        { "category": "Languages", "items": ["Java", "JavaScript", "TypeScript", "Golang"] },
+        { "category": "Frameworks", "items": ["React.js", "Next.js", "Node.js"] },
+        { "category": "Databases", "items": ["MySQL", "MongoDB"] },
+        { "category": "Tools", "items": ["Git", "REST APIs", "GraphQL"] }
+    ],
     "experience": [
         {
             "title": "Software Engineer",
             "company": "Newgen Software Technologies Limited",
+            "companyUrl": "https://newgensoft.com",
             "duration": "Jul 2025 - Present",
+            "tags": ["Jakarta EE", "Java", "JavaScript", "REST APIs", "Servlets"],
             "description": [
                 "Developed and maintained backend utilities, API integrations, Servlets and server-side validations using Enterprise Java (Jakarta EE); contributed to front-end validations using JavaScript and ensured seamless functionality across modules."
             ]
@@ -13,7 +23,9 @@
         {
             "title": "Software Engineer Trainee",
             "company": "Newgen Software Technologies Limited",
+            "companyUrl": "https://newgensoft.com",
             "duration": "Feb 2025 - Jun 2025",
+            "tags": ["Java", "JavaScript", "Web Applications"],
             "description": [
                 "Collaborated with cross-functional teams to develop and maintain web applications."
             ]
