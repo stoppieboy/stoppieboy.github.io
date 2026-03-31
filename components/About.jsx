@@ -6,7 +6,7 @@ const About = ({ id }) => {
     return (
         <div id={id || "about"} className='min-h-[100vh] flex flex-col sm:flex-row items-center max-sm:space-y-10 sm:space-x-5 md:space-x-10 lg:space-x-24 xl:space-x-16 [ md:px-12 lg:px-24 xl:px-36 ]'>
 
-            <Image src="/assets/images/user_img_bw.jpg" width={250} height={0} alt="Shivam's Picture" className='rounded-3xl flex-shrink-0'/>
+            <Image src="/assets/images/user_img.jpg" width={250} height={0} alt="Shivam's Picture" className='rounded-3xl flex-shrink-0'/>
 
             <div className='flex-grow px-5'>
                 <h2 className="text-sm font-mono text-accent3 mb-4 tracking-widest uppercase select-none">// About me</h2>
